@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Background from '../images/background.jpeg'
 import Dropdown from './Dropdown';
 import styled from 'styled-components';
-import StartModal from './StartModal';
+import StartModal from './Modal';
 
 
 
@@ -14,7 +14,7 @@ const StyledContainer = styled.div`
         display: ${props => props.dropdownDisplay};
         top: ${props => props.dropdownY}px;
         left: ${props => props.dropdownX}px;
-        background-color: #031926;
+        background-color: var(--color-dark-blue);
         padding: 12px 12px 0px;
         border-radius: 10px;
     }
@@ -29,7 +29,7 @@ const StyledContainer = styled.div`
         cursor: pointer;
         color: #fff;
         &:hover{
-            color:#FDE74C;
+            color:var(--color-hover-yellow);
         }
     }
 `

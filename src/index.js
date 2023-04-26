@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'normalize.css';
-// import './index.css';
 import App from './App';
 
 import { createGlobalStyle } from 'styled-components';
@@ -13,6 +12,7 @@ const GlobalStyles = createGlobalStyle`
   :root{
     --color-dark-blue: #031926;
     --color-light-blue: #9DBEBB; 
+    --color-hover-yellow: #FDE74C;
   }
 
   body{

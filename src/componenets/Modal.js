@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components';
-import Bulbasaur from '../images/bulbasaur.png'
-import Charmander from '../images/charmander.png'
-import Squirtle from '../images/squirtle.png'
+
+import OpeningAudio from '../audio/1-01.Opening.mp3';
+import ModalStart from './ModalStart';
+import ModalEnd from './ModalEnd';
+
+
 
 const StyledContainer = styled.div`
+  display: ${props => props.displayModal};
   position: absolute;
   top:0;
   left:0;
@@ -26,13 +30,13 @@ const StyledContainer = styled.div`
   }
 
   button{
-    background: #9DBEBB;
+    background: var(--color-light-blue);
     border: none;
     padding: 11px;
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
-    color: #031926;
+    color: var(--color-dark-blue);
     &:hover{
       box-shadow: 0px 1px 2px #fff;
     }
@@ -52,7 +56,7 @@ const StyledContainer = styled.div`
     left: 50%;
     top: 25%;
     transform: translate(-50%, 0);
-    background-color: #031926;
+    background-color: var(--color-dark-blue);
     border-radius: 10px;
     padding: 1rem;
     text-align: center;
@@ -62,20 +66,22 @@ const StyledContainer = styled.div`
 
 
 export default function StartModal() {
+
+  const[displayModal, setDisplayModal] = useState('block')
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const clickHandler = () => {
+    setIsPlaying(false);
+    setDisplayModal('none');
+  }
+
   return (
-    <StyledContainer>
+    <StyledContainer displayModal={displayModal}>
+     {/* {isPlaying && <audio src={OpeningAudio} autoPlay loop type="audio/mp3"/>} */}
       <div className="overlay"></div>
       <div className="modal-content">
-        <h1>Gotta catch'em all!</h1>
-        <p>Tag these pokemon as fast as you can!</p>
-        <p>Scroll through the image to find the correct ones.</p>
-        <p>Click the character and choose the correct name. You will be timed and your score will be recorded, so move fast!</p>
-        <ul>
-          <li><img src={Bulbasaur} alt="" /> <p>Bulbasaur</p></li>
-          <li><img src={Charmander} alt="" /> <p>Charmander</p></li>
-          <li><img src={Squirtle} alt="" /> <p>Squirtle</p></li>
-        </ul>
-        <button>Start Game</button>
+        <ModalStart clickHandler={clickHandler}/>
+        {/* <ModalEnd/> */}
       </div>
     </StyledContainer>
   )
