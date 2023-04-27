@@ -44,7 +44,7 @@ const StyledContainer = styled.div`
     }
 
     thead{
-        background-color: var(--color-light-blue);
+        background: linear-gradient(170deg, #B0ECE7 5%, var(--color-light-blue) 95%);
         color: var(--color-dark-blue)
     }
 
