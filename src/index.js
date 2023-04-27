@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'normalize.css';
 import App from './App';
+import { database } from "./firebase.js";
 
 import { createGlobalStyle } from 'styled-components';
 

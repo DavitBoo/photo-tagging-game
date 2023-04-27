@@ -45,15 +45,37 @@ function GameBoard() {
         let offsetY   = e.clientY - elemRect.top;
         let offsetX = e.clientX;
 
+        //getting image width and height
+        const img = e.target;
+        const imgWidth = img.width;
+        const imgHeight = img.height;
+
+        // update dropdown menu display 
         if(dropdownDisplay === 'none') setDropDownDisplay('block')
         else setDropDownDisplay('none')
 
+        // update the state
         setDropdownY(offsetY);
         setDropdownX(offsetX);
+        
+        // get the offset value for x and y in order to compensate and get the relative value
+        const toBalanceX = e.nativeEvent.offsetX;
+        const toBalanceY = e.nativeEvent.offsetY;
+        
+        //relative values calc
+        const relativeX = (toBalanceX / imgWidth) * 100;
+        const relativeY = (toBalanceY / imgHeight) * 100;
+        
+        //variables to send to the DB
+        //habrá que dar un margen de error de +/-1 aproximadamente 
+        console.log(`Click coordinates: (${offsetX}, ${offsetY})`);
+        console.log(`Relative coordinates: (${Math.round(relativeX)}%, ${Math.round(relativeY)}%)`);
     }
+
 
 	return <StyledContainer dropdownY={dropdownY} dropdownX={dropdownX} dropdownDisplay={dropdownDisplay} >
                 <img onClick={handleClick}
+                    
                     id='background-image'
                     src={Background}
                     alt='background'
