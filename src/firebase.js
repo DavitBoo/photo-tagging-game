@@ -1,5 +1,5 @@
-import firebase from "firebase/app";
-import "firebase/database";
+import { initializeApp } from "firebase/app";
+import { getDatabase, get, ref } from "firebase/database";
 
 const firebaseConfig = {
     apiKey: "AIzaSyD47_RDLF7KNig_HgQ-mAWH6i37JFww2C4",
@@ -12,9 +12,27 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 // Get a reference to the database service
-const database = firebase.database();
+const database = getDatabase(app);
 
-export { database };
+
+export const getPokemonPositions = () => {
+    const positionRef = ref(database, "positions");
+    return new Promise((resolve, reject) => {
+        get(positionRef)
+          .then((snapshot) => {
+            if (snapshot.exists()) {
+              resolve(snapshot.val());
+            } else {
+              console.log("No data available");
+              reject();
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+            reject();
+          });
+      });
+}
