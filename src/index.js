@@ -2,10 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'normalize.css';
 import App from './App';
-import { database } from "./firebase.js";
 
 import { createGlobalStyle } from 'styled-components';
-
 
 const GlobalStyles = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap');
