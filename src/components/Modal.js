@@ -75,7 +75,7 @@ const StyledContainer = styled.div`
 `
 
 
-export default function StartModal() {
+export default function StartModal({handleStartTimer}) {
 
   const[displayModal, setDisplayModal] = useState('block')
   const [isPlaying, setIsPlaying] = useState(true);
@@ -90,7 +90,7 @@ export default function StartModal() {
      {/* {isPlaying && <audio src={OpeningAudio} autoPlay loop type="audio/mp3"/>} */}
       <div className="overlay"></div>
       <div className="modal-content">
-        <ModalStart clickHandler={clickHandler}/>
+        <ModalStart clickHandler={clickHandler} handleStartTimer={handleStartTimer}/>
         {/* <ModalEnd/> */}
       </div>
     </StyledContainer>

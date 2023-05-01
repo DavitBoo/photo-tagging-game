@@ -12,12 +12,12 @@ const StyledHeader = styled.div`
     }
 `
 
-export default function Header() {
+export default function Header({seconds}) {
   return (
     <StyledHeader id="header">
         <div>
             <h1>Where are the starters? 🍃🔥💧</h1>
-            <h2>timer: 00:00:00</h2>
+            <h2>Timer: {seconds}</h2>
         </div>
     </StyledHeader>
   )

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Background from '../images/background.jpeg'
 import Dropdown from './Dropdown';
 import styled from 'styled-components';
-import StartModal from './Modal';
+import Modal from './Modal';
 
 import { getPokemonPositions } from "../firebase";
 
@@ -37,7 +37,7 @@ const StyledContainer = styled.div`
 
 `
 
-function GameBoard() {
+function GameBoard({handleStartTimer}) {
     const [dropdownX, setDropdownX] = useState(0);
     const [dropdownY, setDropdownY] = useState(0);
     const [dropdownDisplay, setDropDownDisplay] = useState('none')
@@ -111,7 +111,7 @@ function GameBoard() {
                     squirtleFound={squirtleFound}
                     restState={restState}
                 />
-                <StartModal/>
+                <Modal handleStartTimer={handleStartTimer}/>
             </StyledContainer>;
         }
 

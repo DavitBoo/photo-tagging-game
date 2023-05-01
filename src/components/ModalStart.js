@@ -4,8 +4,15 @@ import Bulbasaur from '../images/bulbasaur.png'
 import Charmander from '../images/charmander.png'
 import Squirtle from '../images/squirtle.png'
 
-export default function ModalStart(props) {
+export default function ModalStart({clickHandler, handleStartTimer}) {
+  
+  const clicked = () => {
+    clickHandler()
+    handleStartTimer()
+  }
+
   return (
+
     <div>
         <h1>Gotta catch'em all!</h1>
         <p>Tag these pokemon as fast as you can!</p>
@@ -16,7 +23,7 @@ export default function ModalStart(props) {
           <li><img src={Charmander} alt="" /> <p>Charmander</p></li>
           <li><img src={Squirtle} alt="" /> <p>Squirtle</p></li>
         </ul>
-        <button onClick={props.clickHandler}>Start Game</button>
+        <button onClick={clicked}>Start Game</button>
     </div>
   )
 }
