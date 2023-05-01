@@ -20,6 +20,14 @@ function App() {
     return () => clearInterval(interval);
   }, [startTimer]);
 
+  function formatTime(seconds) {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secondsFormatted = Math.floor(seconds % 60);
+  
+    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secondsFormatted.toString().padStart(2, '0')}`;
+  }
+
 
   const handleStartTimer = () => {
     setStartTimer(true);
@@ -28,7 +36,7 @@ function App() {
 
   return (
     <div className="App">
-        <Header seconds={seconds}/>
+        <Header seconds={formatTime(seconds)}/>
         <GameBoard handleStartTimer={handleStartTimer}/>
         <Footer/>
     </div>
