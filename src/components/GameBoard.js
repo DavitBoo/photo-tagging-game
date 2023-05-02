@@ -37,7 +37,7 @@ const StyledContainer = styled.div`
 
 `
 
-function GameBoard({handleStartTimer}) {
+function GameBoard({handleStartTimer, setPokemonsFound}) {
     const [dropdownX, setDropdownX] = useState(0);
     const [dropdownY, setDropdownY] = useState(0);
     const [dropdownDisplay, setDropDownDisplay] = useState('none')
@@ -88,8 +88,8 @@ function GameBoard({handleStartTimer}) {
         
         //variables to send to the DB
         //habrá que dar un margen de error de +/-1 aproximadamente 
-        console.log(`Click coordinates: (${offsetX}, ${offsetY})`);
-        console.log(`Relative coordinates: (${Math.round(relativeX)}%, ${Math.round(relativeY)}%)`);
+        // console.log(`Click coordinates: (${offsetX}, ${offsetY})`);
+        // console.log(`Relative coordinates: (${Math.round(relativeX)}%, ${Math.round(relativeY)}%)`);
     }
 
     const restState = () => {
@@ -110,6 +110,7 @@ function GameBoard({handleStartTimer}) {
                     charmanderFound={charmanderFound}
                     squirtleFound={squirtleFound}
                     restState={restState}
+                    setPokemonsFound={setPokemonsFound}
                 />
                 <Modal handleStartTimer={handleStartTimer}/>
             </StyledContainer>;

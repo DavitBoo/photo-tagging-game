@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 
 const StyledList = styled.ul`
@@ -13,25 +13,34 @@ const StyledList = styled.ul`
   }
 `
 
-export default function Dropdown({bulbasaurFound, charmanderFound, squirtleFound, restState}) {
+export default function Dropdown({bulbasaurFound, charmanderFound, squirtleFound, restState, setPokemonsFound}) {
   const [checkBulbasur, setCheckBulbasur] = useState(false)
   const [checkCharmander, setCheckCharmander] = useState(false)
   const [checkSquirtle, setCheckSquirtle] = useState(false)
 
+  useEffect(() => {
+    if(checkBulbasur && checkCharmander && checkSquirtle) {
+      console.log('hey')
+      setPokemonsFound(true)
+    }
+  }, [checkBulbasur, checkCharmander, checkSquirtle]);
+
   const clickBulbasaur = () => {
-    if(bulbasaurFound) setCheckBulbasur(true)
-      restState()
+    if(bulbasaurFound) setCheckBulbasur(true);
+    restState()
+    
   }
 
   const clickCharmander = () => {
     if(charmanderFound) setCheckCharmander(true)
-      restState()
+    restState()
   }
 
   const clickSquirtle = () => {
     if(squirtleFound) setCheckSquirtle(true)
-      restState()
+    restState()
   }
+
 
   return (
     <div id="dropdown">

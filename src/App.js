@@ -9,16 +9,17 @@ function App() {
 
   const [seconds, setSeconds] = useState(0);
   const [startTimer, setStartTimer] = useState(false);
+  const [pokemonsFound, setPokemonsFound] = useState(false);
 
   useEffect(() => {
     let interval;
-    if (startTimer) {
+    if (startTimer && !pokemonsFound) {
       interval = setInterval(() => {
         setSeconds(seconds => seconds + 1);
       }, 1000);
     }
     return () => clearInterval(interval);
-  }, [startTimer]);
+  }, [startTimer, pokemonsFound]);
 
   function formatTime(seconds) {
     const hours = Math.floor(seconds / 3600);
@@ -37,7 +38,7 @@ function App() {
   return (
     <div className="App">
         <Header seconds={formatTime(seconds)}/>
-        <GameBoard handleStartTimer={handleStartTimer}/>
+        <GameBoard handleStartTimer={handleStartTimer} setPokemonsFound={setPokemonsFound} pokemonsFound={pokemonsFound}/>
         <Footer/>
     </div>
   );
