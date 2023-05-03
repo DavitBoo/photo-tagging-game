@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/photo-tagging-game/static/css/main.58462fbc.css",
+    "main.js": "/photo-tagging-game/static/js/main.25302d70.js",
+    "static/media/background.jpeg": "/photo-tagging-game/static/media/background.6f474ce0e0463a76b24d.jpeg",
+    "static/media/squirtle.png": "/photo-tagging-game/static/media/squirtle.591e15239fe280daec16.png",
+    "static/media/bulbasaur.png": "/photo-tagging-game/static/media/bulbasaur.4fb9845f883170bc49c2.png",
+    "static/media/charmander.png": "/photo-tagging-game/static/media/charmander.e39b54a46e2c66f51cfe.png",
+    "index.html": "/photo-tagging-game/index.html",
+    "main.58462fbc.css.map": "/photo-tagging-game/static/css/main.58462fbc.css.map",
+    "main.25302d70.js.map": "/photo-tagging-game/static/js/main.25302d70.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.58462fbc.css",
+    "static/js/main.25302d70.js"
+  ]
+}
