@@ -47,6 +47,8 @@ function GameBoard({handleStartTimer, setPokemonsFound, pokemonsFound, seconds})
     const [charmanderFound, setCharmanderFound] = useState(false)
     const [squirtleFound, setSquirtlerFound] = useState(false)
 
+    const [foundIt, setFoundIt] = useState('')
+
     const handleClick = async e =>{      
 
         let elemRect = e.target.getBoundingClientRect()
@@ -113,9 +115,10 @@ function GameBoard({handleStartTimer, setPokemonsFound, pokemonsFound, seconds})
                     restState={restState}
                     setPokemonsFound={setPokemonsFound}
                     setDropDownDisplay={setDropDownDisplay}
+                    setFoundIt={setFoundIt}
                 />
                 <Modal handleStartTimer={handleStartTimer} pokemonsFound={pokemonsFound} seconds={seconds}/>
-                <PopupFound/>
+                <PopupFound foundIt={foundIt} setFoundIt={setFoundIt}/>
             </StyledContainer>;
         }
 
