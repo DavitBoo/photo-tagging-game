@@ -13,6 +13,7 @@ The aim of the project is to practice with Firebase backend and also to keep usi
 <li>It has also helped me to interact a little bit with the mouse and the dimensions of the screen.</li>
 <li>And on the other hand I have taken the opportunity to use <strong>Styled-Components</strong>.</li>
 <li>It has also helped me to become more familiar with the use of useEffect.</li>
+<li>useCallback: like <i>handleStartTimer</i> there are some other passed to other components as a prop, without useCallback, everytime App.js is rendering a new instance of the handleStartTimer function will be created, which may cause the child component to be re-rendered unnecessarily. To avoid this behavior, we use useCallback</li>
 </ul>
 
 ## Styled-Components
