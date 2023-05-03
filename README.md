@@ -9,14 +9,14 @@ The aim of the project is to practice with Firebase backend and also to keep usi
 
 ## Overall
 <ul>
-<li>Mostly what I was looking for, it was to practice reading and writing in **Firebase** and to get a little loose when configuring it.</li>
+<li>Mostly what I was looking for, it was to practice reading and writing in <strong>Firebase</strong> and to get a little loose when configuring it.</li>
 <li>It has also helped me to interact a little bit with the mouse and the dimensions of the screen.</li>
-<li>And on the other hand I have taken the opportunity to use **Styled-Components**.</li>
+<li>And on the other hand I have taken the opportunity to use <strong>Styled-Components</strong>.</li>
 <li>It has also helped me to become more familiar with the use of useEffect.</li>
 </ul>
 
 ## Styled-Components
-I was inspired to use Global variables on CSS on Styled-Components in this Article
+<p>I was inspired to use Global variables on CSS on Styled-Components in this Article</p>
 <a href="https://www.joshwcomeau.com/css/css-variables-for-react-devs/">CSS Variables for React Devs - Josh W. Comeau</a>
 
 
