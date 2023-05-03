@@ -16,7 +16,7 @@ The aim of the project is to practice with Firebase backend and also to keep usi
 </ul>
 
 ## Styled-Components
-<p>I was inspired to use Global variables on CSS on Styled-Components in this Article</p>
+<p>I was inspired to use CSS global variables in Styled-Components in this article</p>
 <a href="https://www.joshwcomeau.com/css/css-variables-for-react-devs/">CSS Variables for React Devs - Josh W. Comeau</a>
 
 
