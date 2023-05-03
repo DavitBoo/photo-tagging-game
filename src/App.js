@@ -38,7 +38,12 @@ function App() {
   return (
     <div className="App">
         <Header seconds={formatTime(seconds)}/>
-        <GameBoard handleStartTimer={handleStartTimer} setPokemonsFound={setPokemonsFound} pokemonsFound={pokemonsFound}/>
+        <GameBoard 
+            handleStartTimer={handleStartTimer} 
+            setPokemonsFound={setPokemonsFound} 
+            pokemonsFound={pokemonsFound} 
+            seconds={seconds}
+        />
         <Footer/>
     </div>
   );

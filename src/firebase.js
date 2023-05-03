@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, get, ref } from "firebase/database";
+import { getDatabase, get, set, ref, push } from "firebase/database";
 
 const firebaseConfig = {
     apiKey: "AIzaSyD47_RDLF7KNig_HgQ-mAWH6i37JFww2C4",
@@ -35,4 +35,33 @@ export const getPokemonPositions = () => {
             reject();
           });
       });
+}
+
+export const getScores = () => {
+  const scoreRef = ref(database, 'score')
+  console.log(scoreRef)
+  return new Promise((resolve, reject) => {
+    get(scoreRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          resolve(snapshot.val());
+        } else {
+          console.log("No data available");
+          reject();
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        reject();
+      });
+  });
+}
+
+export const addScore = async (newScore) => {
+  const scoresRef = ref(database, 'score');
+
+  const newScoreRef = push(scoresRef);
+
+  set(newScoreRef, newScore);
+
 }

@@ -37,7 +37,7 @@ const StyledContainer = styled.div`
 
 `
 
-function GameBoard({handleStartTimer, setPokemonsFound}) {
+function GameBoard({handleStartTimer, setPokemonsFound, pokemonsFound, seconds}) {
     const [dropdownX, setDropdownX] = useState(0);
     const [dropdownY, setDropdownY] = useState(0);
     const [dropdownDisplay, setDropDownDisplay] = useState('none')
@@ -111,8 +111,9 @@ function GameBoard({handleStartTimer, setPokemonsFound}) {
                     squirtleFound={squirtleFound}
                     restState={restState}
                     setPokemonsFound={setPokemonsFound}
+                    setDropDownDisplay={setDropDownDisplay}
                 />
-                <Modal handleStartTimer={handleStartTimer}/>
+                <Modal handleStartTimer={handleStartTimer} pokemonsFound={pokemonsFound} seconds={seconds}/>
             </StyledContainer>;
         }
 
