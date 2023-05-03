@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Modal from './Modal';
 
 import { getPokemonPositions } from "../firebase";
+import PopupFound from './PopupFound';
 
 
 
@@ -114,6 +115,7 @@ function GameBoard({handleStartTimer, setPokemonsFound, pokemonsFound, seconds})
                     setDropDownDisplay={setDropDownDisplay}
                 />
                 <Modal handleStartTimer={handleStartTimer} pokemonsFound={pokemonsFound} seconds={seconds}/>
+                <PopupFound/>
             </StyledContainer>;
         }
 
