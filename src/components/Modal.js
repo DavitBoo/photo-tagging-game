@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 
-import OpeningAudio from '../audio/1-01.Opening.mp3';
 import ModalStart from './ModalStart';
 import ModalEnd from './ModalEnd';
 
@@ -13,6 +12,7 @@ const StyledContainer = styled.div`
   left:0;
   width: 100%;
   height: 100%;
+  z-index: 6;
 
   // many of the styles here are applying to ModalStart.js
 
@@ -77,10 +77,8 @@ const StyledContainer = styled.div`
 export default function Modal({handleStartTimer, pokemonsFound, seconds}) {
 
   const[displayModal, setDisplayModal] = useState('block')
-  const [isPlaying, setIsPlaying] = useState(true);
 
   const clickHandler = () => {
-    setIsPlaying(false);
     setDisplayModal('none');
   }
 
@@ -91,7 +89,6 @@ export default function Modal({handleStartTimer, pokemonsFound, seconds}) {
 
   return (
     <StyledContainer displayModal={displayModal} pokemonsFound={pokemonsFound}>
-     {/* {isPlaying && <audio src={OpeningAudio} autoPlay loop type="audio/mp3"/>} */}
       <div className="overlay"></div>
       <div className="modal-content">        
        {pokemonsFound ?

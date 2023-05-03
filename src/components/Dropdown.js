@@ -38,8 +38,8 @@ export default function Dropdown(
     const clickBulbasaur = () => {
       if(bulbasaurFound){
         setCheckBulbasaur(true);
-        setFoundIt('You found Bulbasaur!')
-      } else setFoundIt('This is not Bulbasaur, keep trying it!')
+        setFoundIt(['You found Bulbasaur!', 'var(--right-green)'])
+      } else setFoundIt(['This is not Bulbasaur, keep trying it!', 'var(--wrong-red)'])
       restState()
       setDropDownDisplay('none')
       
@@ -48,8 +48,8 @@ export default function Dropdown(
     const clickCharmander = () => {
       if(charmanderFound) {
         setCheckCharmander(true)
-        setFoundIt('You found Charmander!')
-      } else setFoundIt('This is not Charmander, keep trying it!')
+        setFoundIt(['You found Charmander!', 'var(--right-green)'])
+      } else setFoundIt(['This is not Charmander, keep trying it!', 'var(--wrong-red)'])
       restState()
       setDropDownDisplay('none')
     }
@@ -57,8 +57,8 @@ export default function Dropdown(
     const clickSquirtle = () => {
       if(squirtleFound){ 
         setCheckSquirtle(true)
-        setFoundIt('You found Squirtle!')
-      } else setFoundIt('This is not Squirtle, keep trying it!')
+        setFoundIt(['You found Squirtle!', 'var(--right-green)'])
+      } else setFoundIt(['This is not Squirtle, keep trying it!', 'var(--wrong-red)'])
       restState()
       setDropDownDisplay('none')
       

@@ -59,6 +59,20 @@ const StyledContainer = styled.div`
         height: ${props => props.tableHeight};
         overflow-y: auto;
         width: 100%;
+        
+        &::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: var(--color-light-blue);
+            box-shadow: inset 0 0 2px #000;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: var(--color-hover-yellow);
+        }
     }
     
 `
@@ -128,18 +142,20 @@ export default function ModalEnd({seconds}) {
                 <div className="table-content">
                     <thead>
                         <tr>
+                        <th>Position</th>
                         <th>User Name</th>
                         <th>Time (Score)</th>
                         </tr>
                     </thead>
                     <tbody>
                 
-                    {sortedScores.map(([key, value]) => (
+                    {sortedScores.map(([key, value], index) => (
                     <tr key={key}>
+                        <td>{index+1}</td>
                         {/* get the key of the object inside the "id" */}
                         <td>{Object.keys(value)[0]}</td>
                         {/* using the value of the previous line key with a hh:mm:ss format */}
-                        <td>{formatTime(Object.values(value)[0])}</td>
+                        <td><strong>{formatTime(Object.values(value)[0])}</strong></td>
                     </tr>
                     ))}
     

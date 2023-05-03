@@ -12,7 +12,10 @@ const GlobalStyles = createGlobalStyle`
     --color-dark-blue: #031926;
     --color-light-blue: #9DBEBB; 
     --color-hover-yellow: #FDE74C;
-    --color-green: #119822
+    --color-green: #119822;
+    --wrong-red: #EFB0A1;
+    --right-green: #9AE9A5;
+
   }
 
   body{

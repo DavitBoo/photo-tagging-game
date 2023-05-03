@@ -8,10 +8,11 @@ const StyledContainer = styled.div`
     top: 25%;
     left: 50%;
     transform: translate(-50%, 0);
+    display: ${props => props.display};
 
     p{
         background-color: var(--color-dark-blue);
-        color: #fff;
+        color: ${props => props.color};
         padding: 1rem;
         border-radius: 10px;
         font-weight: 700;
@@ -20,17 +21,16 @@ const StyledContainer = styled.div`
 
 export default function PopupFound({foundIt, setFoundIt}) {
 
-    const [display, setDisplay] = useState(false)
+    const [display, setDisplay] = useState('none')
 
     useEffect(() => {
-        if(foundIt){
-           setDisplay(true)
+        if(foundIt[0]){
+            setDisplay('block')
         }
         // Establecer el temporizador
         const timer = setTimeout(() => {
             // Ocultar el componente después de 3 segundos
-            setFoundIt('')
-            setDisplay(false);
+               setDisplay('none');
         }, 3000);
 
         // Limpiar el temporizador en caso de que el componente se desmonte o se vuelva a renderizar
@@ -39,9 +39,9 @@ export default function PopupFound({foundIt, setFoundIt}) {
     
 
   return (
-    <StyledContainer>
+    <StyledContainer color={foundIt[1]} display={display}>
         {display && <>
-            <p>{foundIt}</p>
+            <p>{foundIt[0]}</p>
         </>}
     </StyledContainer>
   )

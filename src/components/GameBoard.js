@@ -47,7 +47,7 @@ function GameBoard({handleStartTimer, setPokemonsFound, pokemonsFound, seconds})
     const [charmanderFound, setCharmanderFound] = useState(false)
     const [squirtleFound, setSquirtlerFound] = useState(false)
 
-    const [foundIt, setFoundIt] = useState('')
+    const [foundIt, setFoundIt] = useState(['', '#fff'])
 
     const handleClick = async e =>{      
 
