@@ -6,11 +6,6 @@ import Squirtle from '../images/squirtle.png'
 
 export default function ModalStart({clickHandler, handleStartTimer}) {
   
-  const clicked = () => {
-    clickHandler()
-    handleStartTimer()
-  }
-
   return (
 
     <div>
@@ -23,7 +18,10 @@ export default function ModalStart({clickHandler, handleStartTimer}) {
           <li><img src={Charmander} alt="" /> <p>Charmander</p></li>
           <li><img src={Squirtle} alt="" /> <p>Squirtle</p></li>
         </ul>
-        <button onClick={clicked}>Start Game</button>
+        <button onClick={() => {
+          clickHandler();
+          handleStartTimer();
+        }}>Start Game</button>
     </div>
   )
 }
